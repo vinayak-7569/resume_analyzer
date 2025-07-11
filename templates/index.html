@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 AI Resume Analyzer</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="resume" accept=".pdf" required />
+      
+      <!-- JD input -->
+      <textarea name="job_description" placeholder="Paste Job Description here..." required rows="5" style="width:100%; margin: 20px 0;"></textarea>
+
+      <button type="submit">Analyze</button>
+    </form>
+
+    <button id="downloadBtn" onclick="downloadResultAsText()" style="display: none;">
+      ⬇️ Download Summary
+    </button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
